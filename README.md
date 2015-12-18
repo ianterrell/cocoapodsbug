@@ -21,5 +21,6 @@ Only workaround we know of is to install everything manually if you fall into th
 1. Project with Swift
 2. Cocoapods using `use_frameworks!`
 3. pod install a sub-project that has Objective-C
+4. Inlcude the Google Mobile Ads in your *.podspec file
 
 Then you fail with `target has transitive dependencies that include static binaries`
