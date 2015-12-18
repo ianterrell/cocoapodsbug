@@ -1,0 +1,42 @@
+{
+  "name": "MY",
+  "version": "1.0.0",
+  "homepage": "https://developer.foobar.com",
+  "summary": "Sample to show a dependency bug.",
+  "description": "Grits!.",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": [
+        "Pods/Core/**/*.{h,m}",
+        "Pods/Core/**/*.{h,m}"
+      ],
+      "dependencies": {
+        "MY/MyBacon": [
+
+        ]
+      }
+    },
+    {
+      "name": "MyBacon",
+      "source_files": "Pods/MyBacon/**/*.{h,m}"
+    },
+    {
+      "name": "MySubspec",
+      "source_files": "Pod/BVAdvertising/**/*.{h,m}",
+      "dependencies": {
+        "Google-Mobile-Ads-SDK": [
+          "~> 7.6"
+        ],
+        "MY/Core": [
+
+        ]
+      }
+    }
+  ]
+}
