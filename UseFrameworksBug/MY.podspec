@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.name = "MY"
   s.version = '1.0.0'
   s.homepage = 'https://developer.foobar.com'
-  
+
   s.summary = 'Sample to show a dependency bug.'
   s.description = 'Grits!.'
 
@@ -23,9 +23,9 @@ Pod::Spec.new do |s|
 
   s.subspec 'MySubspec' do |ads|
     ads.source_files = 'Pod/BVAdvertising/**/*.{h,m}'
-    # install Google Ads SDK, min of 7.6, and up to but not including 8.0
-    # NOTE: When using CocooaPods with "use_frameworks!" and a Swift app you cannot have a dependency # on a library that is not dynamic. You must install the SDK manually if using BVAdvertising.
-    ads.dependency 'Google-Mobile-Ads-SDK', '~> 7.6'
+    # Big ol' workarounds
+    ads.pod_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-7.6.0' }
+    ads.framework = 'GoogleMobileAds'
     ads.dependency 'MY/Core'
   end
 

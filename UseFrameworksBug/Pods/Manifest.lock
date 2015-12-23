@@ -4,18 +4,18 @@ PODS:
     - MY/MyBacon
   - MY/MyBacon (1.0.0)
   - MY/MySubspec (1.0.0):
-    - Google-Mobile-Ads-SDK (~> 7.6)
     - MY/Core
 
 DEPENDENCIES:
+  - Google-Mobile-Ads-SDK (~> 7.6)
   - MY/MySubspec (from `./`)
 
 EXTERNAL SOURCES:
   MY:
-    :path: ./
+    :path: "./"
 
 SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 0290020329c61183c4685304264b73382bc49fb4
-  MY: fe889ec2b85cdd248aa9c671c6782be462a8a39a
+  MY: b6096b43cc917aecf431523bd07653ab1ea4f316
 
 COCOAPODS: 0.39.0

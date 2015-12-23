@@ -1,0 +1,6 @@
+framework module MY {
+  umbrella header "MY-umbrella.h"
+
+  export *
+  module * { export * }
+}

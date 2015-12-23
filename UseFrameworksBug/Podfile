@@ -3,8 +3,16 @@ platform :ios, '8.0'
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-target 'UseFrameworksBug' do
-	##pod 'Google-Mobile-Ads-SDK', '~> 7.6'
-	pod "MY/MySubspec", :path => "./"
-end
+pod 'Google-Mobile-Ads-SDK', '~> 7.6'
+pod "MY/MySubspec", :path => "./"
 
+class ::Pod::Generator::XCConfig::AggregateXCConfig
+    def generate_without_frameworks
+      puts "I R a MONKEY in UR CODESZ!"
+      config = generate_with_frameworks
+			config.frameworks.delete("GoogleMobileAds")
+      config
+    end
+    alias_method :generate_with_frameworks, :generate
+    alias_method :generate, :generate_without_frameworks
+end
